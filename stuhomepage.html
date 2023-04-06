@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Camu</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+		</script>
+		<link rel="stylesheet" href="stustyle.css">
+	</head>
+	<body>
+		<div ng-app="stuApp" ng-controller="stuCtrl">
+			<ul>
+				<li><a href="#/">HOME</a></li>
+				<li> <a href="#/form">REGISTRATION FORM</a></li>
+				<li> <a href="#/table">STUDENT RECORD</a></li>
+				<li><a href="#/about">ABOUT</a></li>
+			</ul>
+			<div ng-view></div>
+		</div>
+		<script src="stucontroller.js"></script>
+	</body>
+
+</html>

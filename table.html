@@ -1,0 +1,40 @@
+<div class="container">
+	<h1 style="text-align: center;color:hsl(240, 97%, 27%); font-weight: bold;">STUDENT DETAILS</h1>
+	<table class="table">
+		<thead class="table-dark">
+			<tr>
+				<th>First Name</th>
+				<th>Middle Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Mobile Num</th>
+				<th>DOB</th>
+				<th>Gender</th>
+				<th>university</th>
+				<th>Auction</th>
+			</tr>
+		</thead>
+		<tbody style="color:hsl(240, 97%, 27%);">
+			<tr ng-repeat="contact in contacts">
+				<td>{{contact.fName}}</td>
+				<td>{{contact.mName}}</td>
+				<td>{{contact.lName}}</td>
+				<td>{{contact.mailId}}</td>
+				<td>{{contact.num}}</td>
+				<td>{{contact.dob | date : "dd/MM/yyyy"}}</td>
+				<td>{{contact.genderVal}}</td>
+				<td>{{contact.university}}</td>
+
+				<td>
+					<a href="#/form" ng-click="stuEdit($index)"> <input type="button" class="btn btn-primary"
+							value="Edit"></a>
+					<input type="button" class="btn btn-danger" ng-click="stuDelete($index)" value="Delete">
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+</div>

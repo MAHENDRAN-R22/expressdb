@@ -1,0 +1,96 @@
+ <div class="container">
+     <form action="" class="was-validated" name="myForm">
+         <h1 style="text-align: center;color:hsl(240, 97%, 27%); font-weight: bold;">REGISTRATION FORM</h1>
+         <div class="row">
+             <div class="col-sm-3">
+                 <label for="uname" class="form-label">ENTER FIRST NAME</label>
+                 <input type="text" class="form-control" placeholder="Enter Firstname" ng-model="stuDetails.fName"
+                     required>
+                 <span ng-if="stuDetails.fName==undefined || stuDetails.fName.length<4">*please enter valid name </span>
+             </div>
+             <div class="col-sm-3">
+                 <label for="uname" class="form-label">ENTER MIDDLE NAME</label>
+                 <input type="text" class="form-control" placeholder="Enter Middlename" ng-model="stuDetails.mName"
+                     required>
+                 <span ng-if="stuDetails.mName==undefined || stuDetails.mName.length>4">*please enter valid name</span>
+             </div>
+             <div class="col-sm-3">
+                 <label for="uname" class="form-label">ENTER LAST NAME</label>
+                 <input type="text" class="form-control" placeholder="Enter Lastname" ng-model="stuDetails.lName"
+                     required>
+                 <span ng-if="stuDetails.lName==undefined || stuDetails.lName.length<3 ">*please enter valid name
+                 </span>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-9">
+                 <label for="uname" class="form-label">ENTER YOUR MAILID</label>
+                 <input type="email" class="form-control" placeholder="ENTER YOUR MAILID" name="mailid"
+                     ng-model="stuDetails.mailId" ng-pattern="/^\S+@\S+\.\S+$/">
+                 <span ng-if="myForm.mailid.$error.pattern">Please Enter Valid Email</span>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-9">
+                 <label for="ex2">MOBILE NUMBER</label>
+                 <input class="form-control" type="number" placeholder="ENTER YOUR NUMBER" ng-model="stuDetails.num"
+                     style="margin-top: 10px;">
+                 <span ng-if="stuDetails.num==undefined || stuDetails.num.toString().length!==10"> *please enter valid
+                     mobile number</span>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-9">
+                 <label for="ex2">ENTER YOUR DOB</label>
+                 <input class="form-control" type="date" name="Age" ng-model="stuDetails.dob" style="margin-top: 10px;">
+                 <span ng-show="errordobMsg">{{errordobMsg}}</span>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-9">
+                 <label for="ex2" style="margin-bottom: 10px;">GENDER</label>
+                 <div class="radio">
+                     <label>
+                         <input type="radio" name="optradio" value="MALE" ng-model="stuDetails.genderVal">MALE </label>
+                 </div>
+                 <div class="radio">
+                     <label>
+                         <input type="radio" name="optradio" value="FEMALE" ng-model="stuDetails.genderVal">FEMALE
+                     </label>
+                 </div>
+                 <div class="radio">
+                     <label>
+                         <input type="radio" name="optradio" value="OTHER" ng-model="stuDetails.genderVal">OTHER
+                     </label>
+                     <span ng-show="errorgenderMsg">{{errorgenderMsg}}</span>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-9">
+                 <label for="sel2">SELECT YOUR UNIVERSITY</label>
+                 <select class="form-control" id="sel2" style="margin-top: 10px;" ng-model="stuDetails.university">
+                     <option></option>
+                     <option>ANNA UNIVERSITY</option>
+                     <option>SRM UNIVERSITY</option>
+                     <option>PERIYAR UNIVERSITY</option>
+                     <option>VELS UNIVERSITY</option>
+                     <option>MGR UNIVERSITY</option>
+                 </select>
+                 <span ng-show="erroruniMsg">{{erroruniMsg}}</span>
+             </div>
+         </div>
+
+         <div class="row">
+             <div class="text-center">
+                 <button type="button" class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="stuDatabase()"
+                     ng-hide="isupdateShow">Submit</button>
+                 <button type="button" class="btn btn-primary" ng-disabled="myForm.$invalid" ng-click="stuDatabase()"
+                     ng-show="isupdateShow">Update</button>
+
+             </div>
+         </div>
+     </form>
+
+
+ </div>
